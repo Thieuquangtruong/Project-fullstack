@@ -19,6 +19,7 @@
     "express": "^4.18.2",
     "gridfs-stream": "^1.1.1",
     "helmet": "^7.0.0",
+    "joi": "^17.9.2",
     "jsonwebtoken": "^9.0.1",
     "mogoose": "^0.0.1-security",
     "mongoose": "^7.4.1",
