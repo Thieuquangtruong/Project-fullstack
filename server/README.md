@@ -1,0 +1,1 @@
+bo sung phần backend postroutes setup phut thứ 1:25:56 rồi nhé
