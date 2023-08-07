@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
     {
-        firName: {
+        firstName: {
             type: String,
             required: true,
             min: 2,
@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
             min: 2,
             max: 50,
         },
-        picture: {
+        picturePath: {
             type: String,
             default: "",
         },
@@ -42,4 +42,5 @@ const userSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-module.exports = mongoose.model("Users", userSchema);
+const User = mongoose.model("Users", userSchema);
+export default User;
