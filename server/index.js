@@ -14,6 +14,9 @@ import postRoutes from "./routes/posts"
 import { register } from "./controllers/auth"
 import { createPost } from "./controllers/posts"
 import { verifyToken } from './middleware/auth';
+import User from "./models/user.model.js"
+import Post from "./models/user.model.js"
+import {users, posts} from "./data/index.js"
 // import { router } from './routers/index';
 
 /* CONFIGURATIONS */
@@ -60,7 +63,9 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-
+      // ADD DATA
+    // User.insertMany(users);
+    // Post.insertMany(posts);
     /* ADD DATA ONE TIME */
     // User.insertMany(users);
     // Post.insertMany(posts);
