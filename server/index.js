@@ -8,16 +8,16 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import authRoutes from "./routes/auth";
-import userRoutes from "./routes/users"
-import postRoutes from "./routes/posts"
-import { register } from "./controllers/auth"
-import { createPost } from "./controllers/posts"
-import { verifyToken } from './middleware/auth';
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js"
+import postRoutes from "./routes/posts.js"
+import { register } from "./controllers/auth.js"
+import { createPost } from "./controllers/posts.js"
+import { verifyToken } from './middleware/auth.js';
 import User from "./models/user.model.js"
-import Post from "./models/user.model.js"
-import {users, posts} from "./data/index.js"
-// import { router } from './routers/index';
+import Post from "./models/posts.model.js"
+import { users, posts} from "./data/index.js"
+
 
 /* CONFIGURATIONS */
 

@@ -1,6 +1,6 @@
-import bcrypt from 'bcryptjs'; // mã hoá password
+import bcryptjs from "bcryptjs"; // mã hoá password
 import jwt from 'jsonwebtoken';
-import User from "../models/user.model"
+import User from "../models/user.model.js"
 
 
 // REGISTER USER
@@ -36,8 +36,8 @@ export const register = async (req, res) => {
         //         });
         //     }
 
-        const salt = await bcrypt.genSaltSync(); // quy định định dạng mã hoá
-        const passwordHash = await bcrypt.hashSync(password, salt); // mã hoá password
+        const salt = await bcryptjs.genSaltSync(); // quy định định dạng mã hoá
+        const passwordHash = await bcryptjs.hashSync(password, salt); // mã hoá password
 
         const newUser = new User({
             firstName,
