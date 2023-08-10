@@ -17,14 +17,16 @@ export const getUserFriends = async (req, res) => {
         const user = await User.findById(id);
 
         const friends = await Promise.all(
-            user.friends.map((id) => User.findById(id))
+            user.friends.map((id) => User.findById(id)) //Hàm sử dụng id này để tìm kiếm người dùng thích hợp trong cơ sở dữ liệu bằng cách sử dụng
         );
+
+        //Hàm tiếp tục định dạng thông tin các friend tìm thấy bằng cách lấy ra các trường thông tin quan trọng
         const formattedFriends = friends.map(
             ({ _id, firstName, lastName, occupation, location, picturePath }) => {
                 return { _id, firstName, lastName, occupation, location, picturePath };
             }
         );
-        res.status(200).json(formattedFriends);
+        res.status(200).json(formattedFriends); //Kết quả được gửi trả về dưới dạng JSON cho phía client thông qua
     } catch (err) {
         res.status(404).json({ message: err.message });
     }

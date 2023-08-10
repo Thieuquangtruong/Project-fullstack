@@ -36,8 +36,8 @@ export const register = async (req, res) => {
         //         });
         //     }
 
-        const salt = await bcryptjs.genSaltSync(); // quy định định dạng mã hoá
-        const passwordHash = await bcryptjs.hashSync(password, salt); // mã hoá password
+        const salt = await bcryptjs.genSalt(); // quy định định dạng mã hoá
+        const passwordHash = await bcryptjs.hash(password, salt); // mã hoá password
 
         const newUser = new User({
             firstName,

@@ -63,10 +63,7 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-      // ADD DATA
-    // User.insertMany(users);
-    // Post.insertMany(posts);
-    /* ADD DATA ONE TIME */
+    /* ADD DATA ONE TIME(da them) */
     // User.insertMany(users);
     // Post.insertMany(posts);
   })
