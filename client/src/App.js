@@ -2,10 +2,10 @@ import { BrowserRouter, Navigate, Routes, Route} from "react-router-dom";
 import HomePage from "./scenes/homePage";
 import LoginPage from "./scenes/loginPage";
 import ProfilePage from "./scenes/profilePage"
-import { useMemo } from "react";
+import { useMemo } from "react"; //hooks của React dùng để tối ưu hóa hiệu suất và truy xuất state từ Redux trong ứng dụng.
 import { useSelector } from "react-redux";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
+import { CssBaseline, ThemeProvider } from "@mui/material"; //thư viên MUI
+import { createTheme } from "@mui/material/styles"; //Một function từ thư viện MUI để tạo ra theme theo các cài đặt cụ thể.
 import { themeSettings } from "./theme";
 
 
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={isAuth ? <HomePage /> : <Navigate to="/" />} />
-          <Route path="/profile/:userid" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
+          <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
         </Routes>
         </ThemeProvider>
       </BrowserRouter>

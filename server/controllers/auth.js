@@ -66,7 +66,7 @@ export const login = async (req, res) => {
 
         if (!user) return res.status(400).json({ msg: "User does not exist. " });
 
-        const isMatch = await bcrypt.compare(password, user.password); //bcrypt.compare để so sánh mật khẩu được cung cấp trong yêu cầu với mật khẩu đã được mã hóa của người dùng trong cơ sở dữ liệu.
+        const isMatch = await bcryptjs.compare(password, user.password); //bcrypt.compare để so sánh mật khẩu được cung cấp trong yêu cầu với mật khẩu đã được mã hóa của người dùng trong cơ sở dữ liệu.
         if (!isMatch) return res.status(400).json({ msg: "Invalid credentials. " });
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET); //thư viện jwt để tạo một token JWT, gồm một đối tượng payload chứa ID của người dùng.
