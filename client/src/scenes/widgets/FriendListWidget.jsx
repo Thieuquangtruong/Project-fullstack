@@ -1,9 +1,9 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import Friend from "../../components/Friend";
-import WidgetWrapper from "../../components/WidgetWrapper";
+import Friend from "components/Friend";
+import WidgetWrapper from "components/WidgetWrapper";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setFriends } from "../../state";
+import { setFriends } from "state";
 
 const FriendListWidget = ({ userId }) => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const FriendListWidget = ({ userId }) => {
 
   const getFriends = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${userId}/friends`,
+      `http://localhost:3001/users/friends/${userId}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -26,7 +26,7 @@ const FriendListWidget = ({ userId }) => {
   useEffect(() => {
     getFriends();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
- 
+
   return (
     <WidgetWrapper>
       <Typography

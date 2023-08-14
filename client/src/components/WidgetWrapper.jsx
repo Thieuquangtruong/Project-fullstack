@@ -7,4 +7,4 @@ const WidgetWrapper = styled(Box)(({ theme }) => ({
   borderRadius: "0.75rem",
 }));
 
-export default WidgetWrapper;   
+export default WidgetWrapper;
