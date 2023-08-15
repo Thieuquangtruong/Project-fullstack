@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
+import { toast } from 'react-hot-toast';
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
@@ -62,7 +63,7 @@ const Form = () => {
       formData.append(value, values[value]);
     }
     formData.append("picturePath", values.picture.name);
-
+  
     const savedUserResponse = await fetch(
       "http://localhost:3001/auth/register",
       {
@@ -72,28 +73,41 @@ const Form = () => {
     );
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
-
+  
     if (savedUser) {
       setPageType("login");
+      toast.success("Đăng ký thành công!");
+    } else {
+      toast.error("Đăng ký thất bại!");
     }
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
-    const loggedIn = await loggedInResponse.json();
-    onSubmitProps.resetForm();
-    if (loggedIn) {
-      dispatch(
-        setLogin({
-          user: loggedIn.user,
-          token: loggedIn.token,
-        })
-      );
-      navigate("/home");
+    try {
+      const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!loggedInResponse.ok) {
+        throw new Error("Đăng nhập thất bại!");
+      }
+
+      const loggedIn = await loggedInResponse.json();
+      onSubmitProps.resetForm();
+
+      if (loggedIn) {
+        dispatch(
+          setLogin({
+            user: loggedIn.user,
+            token: loggedIn.token,
+          })
+        );
+        navigate("/home");
+        toast.success("Đăng nhập thành công!");
+      } 
+    } catch (error) {
+      toast.error("Đăng nhập thất bại!");;
     }
   };
 

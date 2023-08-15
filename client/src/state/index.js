@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from 'react-hot-toast';
 
 const initialState = {
   mode: "light",
@@ -21,6 +22,7 @@ export const authSlice = createSlice({
     setLogout: (state) => {
       state.user = null;
       state.token = null;
+      toast.success("Đăng xuất thành công")
     },
     setFriends: (state, action) => {
       if (state.user) {
