@@ -18,6 +18,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   };
 
   const getUserPosts = async () => {
+    console.log('aasdasd')
     const response = await fetch(
       `http://localhost:3001/posts/${userId}/posts`,
       {

@@ -19,8 +19,7 @@ export const createPost = async (req, res) => {
     });
     await newPost.save();
 
-    const post = await Post.find();
-    res.status(201).json(post);
+    res.status(201).json(newPost);
   } catch (err) {
     res.status(409).json({ message: err.message });
   }
@@ -29,7 +28,7 @@ export const createPost = async (req, res) => {
 /* READ */
 export const getFeedPosts = async (req, res) => {
   try {
-    const post = await Post.find();
+    const post = await Post.find().sort({createdAt: "desc"});
     res.status(200).json(post);
   } catch (err) {
     res.status(404).json({ message: err.message });
@@ -39,7 +38,7 @@ export const getFeedPosts = async (req, res) => {
 export const getUserPosts = async (req, res) => {
   try {
     const { userId } = req.params;
-    const post = await Post.find({ userId });
+    const post = await Post.find({ userId }).sort({createdAt: "desc"});
     res.status(200).json(post);
   } catch (err) {
     res.status(404).json({ message: err.message });
@@ -71,3 +70,20 @@ export const likePost = async (req, res) => {
     res.status(404).json({ message: err.message });
   }
 };
+
+export const deletePost = async (req, res) => {
+  try {
+      const userId = req.user?.id
+      const id = req.params.id
+
+      const result = await Post.deleteOne({
+          _id: id,
+          userId: userId,
+      })
+
+      return res.status(200).json({message: "delete post success"})
+  } catch (error) {
+      console.log(error)
+      return res.status(500).json(error)
+  }
+}
