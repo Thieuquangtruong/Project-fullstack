@@ -35,10 +35,10 @@ const FriendListWidget = ({ userId }) => {
         fontWeight="500"
         sx={{ mb: "1.5rem" }}
       >
-        Friend List
+        Danh sách Bạn bè
       </Typography>
       <Box display="flex" flexDirection="column" gap="1.5rem">
-        {friends.map((friend) => {
+        {friends?.map((friend) => {
           return (
             <Friend
               key={friend._id}

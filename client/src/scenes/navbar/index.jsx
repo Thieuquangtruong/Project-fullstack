@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Life on Social Media
+          Aloha Social Media 
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
@@ -107,7 +107,7 @@ const Navbar = () => {
               <MenuItem value={fullName}>
                 <Typography>{fullName}</Typography>
               </MenuItem>
-              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Đăng xuất</MenuItem>
             </Select>
           </FormControl>
         </FlexBetween>
@@ -183,7 +183,7 @@ const Navbar = () => {
                   <Typography>{fullName}</Typography>
                 </MenuItem>
                 <MenuItem onClick={() => dispatch(setLogout())}>
-                  Log Out
+                  Đăng xuất
                 </MenuItem>
               </Select>
             </FormControl>

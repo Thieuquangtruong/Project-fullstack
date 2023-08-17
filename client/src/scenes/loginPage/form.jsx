@@ -107,7 +107,7 @@ const Form = () => {
         toast.success("Đăng nhập thành công!");
       } 
     } catch (error) {
-      toast.error("Đăng nhập thất bại!");;
+      toast.error("Đăng nhập thất bại!");
     }
   };
 
@@ -259,7 +259,7 @@ const Form = () => {
                 "&:hover": { color: palette.primary.main },
               }}
             >
-              {isLogin ? "LOGIN" : "REGISTER"}
+              {isLogin ? "ĐĂNG NHẬP" : "ĐĂNG KÝ"}
             </Button>
             <Typography
               onClick={() => {
