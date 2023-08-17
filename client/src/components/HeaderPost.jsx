@@ -47,7 +47,7 @@ const HeaderPost = ({ friendId, name, subtitle, userPicturePath, postId, userId 
       });
     // const posts = await response.json();
     dispatch(deletePost({ id }));
-    toast.success("Post deleted successfully")
+    toast.success("Đã xóa bài đăng thành công")
   };
   const user = useSelector((state) => state.user)
 

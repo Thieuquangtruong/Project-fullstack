@@ -12,9 +12,9 @@ const AdvertWidget = () => {
     <WidgetWrapper>
       <FlexBetween>
         <Typography color={dark} variant="h5" fontWeight="500">
-          Sponsored
+          Được tài trợ
         </Typography>
-        <Typography color={medium}>Create Ad</Typography>
+        <Typography color={medium}>Tạo quảng cáo</Typography>
       </FlexBetween>
       <img
         width="100%"
@@ -28,8 +28,8 @@ const AdvertWidget = () => {
         <Typography color={medium}>mikacosmetics.com</Typography>
       </FlexBetween>
       <Typography color={medium} m="0.5rem 0">
-        Your pathway to stunning and immaculate beauty and made sure your skin
-        is exfoliating skin and shining like light.
+        Con đường dẫn đến vẻ đẹp lộng lẫy và không tì vết của bạn
+        và đảm bảo rằng làn da của bạn được tẩy tế bào chết và tỏa sáng như ánh sáng.
       </Typography>
     </WidgetWrapper>
   );

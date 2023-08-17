@@ -276,8 +276,8 @@ const Form = () => {
               }}
             >
               {isLogin
-                ? "Don't have an account? Sign Up here."
-                : "Already have an account? Login here."}
+                ? "Bạn chưa có tài khoàn? Hãy đăng ký tại đây!"
+                : "Đã có tài khoản? Đăng nhập tại đây"}
             </Typography>
           </Box>
         </form>

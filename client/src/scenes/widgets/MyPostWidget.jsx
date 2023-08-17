@@ -127,7 +127,7 @@ const MyPostWidget = ({ picturePath }) => {
             color={mediumMain}
             sx={{ "&:hover": { cursor: "pointer", color: medium } }}
           >
-            Image
+            Hình ảnh
           </Typography>
         </FlexBetween>
 
@@ -140,7 +140,7 @@ const MyPostWidget = ({ picturePath }) => {
 
             <FlexBetween gap="0.25rem">
               <AttachFileOutlined sx={{ color: mediumMain }} />
-              <Typography color={mediumMain}>Attachment</Typography>
+              <Typography color={mediumMain}>Tập tin đính kèm</Typography>
             </FlexBetween>
 
             <FlexBetween gap="0.25rem">

@@ -97,13 +97,13 @@ const UserWidget = ({ userId, picturePath }) => {
       {/* THIRD ROW */}
       <Box p="1rem 0">
         <FlexBetween mb="0.5rem">
-          <Typography color={medium}>Who's viewed your profile</Typography>
+          <Typography color={medium}>Số lượt xem của bạn</Typography>
           <Typography color={main} fontWeight="500">
             {viewedProfile}
           </Typography>
         </FlexBetween>
         <FlexBetween>
-          <Typography color={medium}>Impressions of your post</Typography>
+          <Typography color={medium}>Ấn tượng về bài đăng của bạn</Typography>
           <Typography color={main} fontWeight="500">
             {impressions}
           </Typography>
@@ -115,7 +115,7 @@ const UserWidget = ({ userId, picturePath }) => {
       {/* FOURTH ROW */}
       <Box p="1rem 0">
         <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
-          Social Profiles
+          Hồ sơ xã hội
         </Typography>
 
         <FlexBetween gap="1rem" mb="0.5rem">
