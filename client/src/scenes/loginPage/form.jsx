@@ -18,18 +18,18 @@ import FlexBetween from "components/FlexBetween";
 import { toast } from 'react-hot-toast';
 
 const registerSchema = yup.object().shape({
-  firstName: yup.string().required("required"),
-  lastName: yup.string().required("required"),
-  email: yup.string().email("invalid email").required("required"),
-  password: yup.string().required("required"),
-  location: yup.string().required("required"),
-  occupation: yup.string().required("required"),
-  picture: yup.string().required("required"),
+  firstName: yup.string().required("Bạn chưa nhập Tên."),
+  lastName: yup.string().required("Bạn chưa nhập Họ và Tên đệm."),
+  email: yup.string().email("Định dạng email của bạn không đúng.").required("Bạn chưa nhập email."),
+  password: yup.string().required("Bạn chưa nhập mật khẩu."),
+  location: yup.string(),
+  occupation: yup.string(),
+  picture: yup.string(),
 });
 
 const loginSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("required"),
-  password: yup.string().required("required"),
+  email: yup.string().email("Định dạng email của bạn không đúng.").required("Bạn chưa nhập email."),
+  password: yup.string().required("Bạn chưa nhập mật khẩu"),
 });
 
 const initialValuesRegister = {
@@ -144,7 +144,7 @@ const Form = () => {
             {isRegister && (
               <>
                 <TextField
-                  label="First Name"
+                  label="Tên"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.firstName}
@@ -156,7 +156,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  label="Last Name"
+                  label="Họ và Tên Đệm"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.lastName}
@@ -166,7 +166,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
-                  label="Location"
+                  label="Vị trí"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.location}
@@ -176,7 +176,7 @@ const Form = () => {
                   sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
-                  label="Occupation"
+                  label="Nghề nghiệp"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.occupation}
@@ -209,7 +209,7 @@ const Form = () => {
                       >
                         <input {...getInputProps()} />
                         {!values.picture ? (
-                          <p>Add Picture Here</p>
+                          <p>Thêm hình ảnh ở đây</p>
                         ) : (
                           <FlexBetween>
                             <Typography>{values.picture.name}</Typography>
@@ -234,7 +234,7 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
             <TextField
-              label="Password"
+              label="Mật khẩu"
               type="password"
               onBlur={handleBlur}
               onChange={handleChange}
@@ -276,8 +276,8 @@ const Form = () => {
               }}
             >
               {isLogin
-                ? "Don't have an account? Sign Up here."
-                : "Already have an account? Login here."}
+                ? "Bạn chưa có tài khoản? Đăng ký ở đây."
+                : "Bạn đã có tài khoản? Đăng nhập ở đây."}
             </Typography>
           </Box>
         </form>

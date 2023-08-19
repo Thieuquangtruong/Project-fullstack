@@ -116,7 +116,7 @@ const MyEditPostWidget = ({ picturePath, postId, post, handleClose }) => {
                                         <p>Thêm hình ảnh ở đây</p>
                                     ) : (
                                         <FlexBetween>
-                                            <Typography>{image.name}</Typography>
+                                            <Typography>{post?.picturePath}</Typography>
                                             <EditOutlined />
                                         </FlexBetween>
                                     )}
