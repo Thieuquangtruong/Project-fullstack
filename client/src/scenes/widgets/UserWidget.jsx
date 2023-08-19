@@ -115,7 +115,11 @@ const UserWidget = ({ userId, picturePath }) => {
       {/* FOURTH ROW */}
       <Box p="1rem 0">
         <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
+<<<<<<< HEAD
           Hồ sơ Mạng Xã Hội
+=======
+          Hồ sơ xã hội
+>>>>>>> 6646c9290455901f1d4f3ad021493e805d347b86
         </Typography>
 
         <FlexBetween gap="1rem" mb="0.5rem">
