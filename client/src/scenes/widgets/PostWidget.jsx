@@ -22,6 +22,7 @@ const PostWidget = ({
   userPicturePath,
   likes,
   comments,
+  post
 }) => {
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
@@ -46,7 +47,6 @@ const PostWidget = ({
     const updatedPost = await response.json();
     dispatch(setPost({ post: updatedPost }));
   };
-
   return (
     <WidgetWrapper m="2rem 0">
       <HeaderPost
@@ -56,6 +56,7 @@ const PostWidget = ({
         userPicturePath={userPicturePath}
         postId={postId}
         userId={postUserId}
+        post={post}
       />
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}

@@ -46,7 +46,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`http://localhost:3001/posts`, {
+    const response = await fetch(`http://localhost:3001/posts/:id`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
@@ -96,7 +96,7 @@ const MyPostWidget = ({ picturePath }) => {
                 >
                   <input {...getInputProps()} />
                   {!image ? (
-                    <p>Add Image Here</p>
+                    <p>Thêm hình ảnh ở đây</p>
                   ) : (
                     <FlexBetween>
                       <Typography>{image.name}</Typography>
@@ -107,7 +107,7 @@ const MyPostWidget = ({ picturePath }) => {
                 {image && (
                   <IconButton
                     onClick={() => setImage(null)}
-                    sx={{ width: "15%" }}
+                    sx={{ width: "15%", p: "0.6rem" }}
                   >
                     <DeleteOutlined />
                   </IconButton>
@@ -127,7 +127,7 @@ const MyPostWidget = ({ picturePath }) => {
             color={mediumMain}
             sx={{ "&:hover": { cursor: "pointer", color: medium } }}
           >
-            Image
+            Hình ảnh
           </Typography>
         </FlexBetween>
 
@@ -140,7 +140,7 @@ const MyPostWidget = ({ picturePath }) => {
 
             <FlexBetween gap="0.25rem">
               <AttachFileOutlined sx={{ color: mediumMain }} />
-              <Typography color={mediumMain}>Attachment</Typography>
+              <Typography color={mediumMain}>Tập tin đính kèm</Typography>
             </FlexBetween>
 
             <FlexBetween gap="0.25rem">
