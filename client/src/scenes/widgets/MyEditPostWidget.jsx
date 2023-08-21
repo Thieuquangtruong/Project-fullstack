@@ -124,7 +124,7 @@ const MyEditPostWidget = ({ picturePath, postId, post, handleClose }) => {
                                 {image && (
                                     <IconButton
                                         onClick={() => setImage("")}
-                                        sx={{ width: "15%", p: "0.6rem" }}
+                                        sx={{ width: "12%", p: "1rem" }}
                                     >
                                         <DeleteOutlined />
                                     </IconButton>

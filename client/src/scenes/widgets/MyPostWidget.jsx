@@ -46,7 +46,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`http://localhost:3001/posts/:id`, {
+    const response = await fetch(`http://localhost:3001/posts/`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
@@ -107,7 +107,7 @@ const MyPostWidget = ({ picturePath }) => {
                 {image && (
                   <IconButton
                     onClick={() => setImage(null)}
-                    sx={{ width: "15%", p: "0.6rem" }}
+                    sx={{ width: "12%", p: "1rem" }}
                   >
                     <DeleteOutlined />
                   </IconButton>
