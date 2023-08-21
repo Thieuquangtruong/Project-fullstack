@@ -137,7 +137,7 @@ const MyEditPostWidget = ({ picturePath, postId, post, handleClose }) => {
 
             <Divider sx={{ margin: "1.25rem 0" }} />
             <div style={{ textAlign: "center", margin: "10px" }}>
-                {!isImage && <img src={`http://localhost:3001/assets/${image}`} style={{ maxWidth: "500px", height: 'auto', borderRadius: "0.75rem" }} />}
+                {!isImage? "" : <img src={`http://localhost:3001/assets/${image}`} style={{ maxWidth: "500px", height: 'auto', borderRadius: "0.75rem" }} />}
             </div>
 
             <FlexBetween>
